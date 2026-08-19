@@ -1,287 +1,528 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ÉLÉGANCE - Pakistani Fashion Store</title>
+<title>ÉLÉGANCE | Fashion Store</title>
 
 <style>
+
 *{
- margin:0;
- padding:0;
- box-sizing:border-box;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
- font-family:Arial,sans-serif;
- color:#263238;
- background:
- linear-gradient(135deg,
- #fff1e6,
- #dff8f5,
- #e9e1ff,
- #fff0f6,
- #eaf7ff);
- min-height:100vh;
+    font-family:Arial,sans-serif;
+    color:#263238;
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff0e6,
+        #e4f8f5,
+        #eee5ff,
+        #fff1f7
+    );
+
+    min-height:100vh;
 }
 
+/* HEADER */
+
 header{
- position:sticky;
- top:0;
- z-index:1000;
- display:flex;
- justify-content:space-between;
- align-items:center;
- flex-wrap:wrap;
- gap:10px;
- padding:15px 5%;
- background:rgba(255,255,255,.96);
- box-shadow:0 4px 20px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(255,255,255,.96);
+
+    padding:14px 5%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    flex-wrap:wrap;
+    gap:10px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 .logo{
- font-family:Georgia,serif;
- font-size:28px;
- letter-spacing:3px;
+    font-family:Georgia,serif;
+    font-size:27px;
+    letter-spacing:3px;
 }
 
 .logo span{
- color:#b78350;
+    color:#b78350;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
 }
 
 nav button{
- border:0;
- background:none;
- padding:9px 10px;
- font-weight:bold;
- cursor:pointer;
+    background:none;
+    border:0;
+    padding:9px 10px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 .cart{
- border:0;
- background:#263238;
- color:white;
- padding:11px 18px;
- border-radius:25px;
- cursor:pointer;
+    background:#263238;
+    color:white;
+
+    border:0;
+    border-radius:25px;
+
+    padding:11px 17px;
+
+    cursor:pointer;
 }
 
+/* HERO */
+
 .hero{
- text-align:center;
- padding:70px 5%;
+    text-align:center;
+    padding:75px 5%;
 }
 
 .hero h1{
- font-family:Georgia,serif;
- font-size:clamp(42px,7vw,72px);
- margin-bottom:18px;
+    font-family:Georgia,serif;
+
+    font-size:
+    clamp(40px,7vw,72px);
+
+    margin-bottom:18px;
 }
 
 .hero p{
- max-width:800px;
- margin:auto;
- color:#637179;
- line-height:1.8;
- font-size:18px;
+    max-width:850px;
+    margin:auto;
+
+    color:#68757b;
+
+    line-height:1.8;
+    font-size:18px;
 }
 
+/* SEARCH */
+
 .shopTools{
- display:flex;
- justify-content:center;
- flex-wrap:wrap;
- gap:10px;
- padding:10px 5% 35px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    padding:10px 5% 35px;
 }
 
 .search{
- display:flex;
- width:500px;
- max-width:100%;
+    display:flex;
+
+    width:520px;
+    max-width:100%;
 }
 
 .search input{
- flex:1;
- padding:14px;
- border:1px solid #ddd;
- border-radius:10px 0 0 10px;
+    flex:1;
+
+    padding:14px;
+
+    border:1px solid #ddd;
+
+    border-radius:
+    10px 0 0 10px;
+
+    font-size:15px;
 }
 
 .search button{
- border:0;
- padding:0 20px;
- background:#263238;
- color:white;
- border-radius:0 10px 10px 0;
- cursor:pointer;
- font-size:18px;
+    padding:0 20px;
+
+    border:0;
+
+    background:#263238;
+    color:white;
+
+    border-radius:
+    0 10px 10px 0;
+
+    cursor:pointer;
+
+    font-size:18px;
 }
 
 select{
- padding:13px;
- border:1px solid #ddd;
- border-radius:10px;
- background:white;
+    padding:13px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    background:white;
 }
 
+/* PRODUCTS */
+
 .products{
- max-width:1450px;
- margin:auto;
- padding:0 5% 70px;
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:22px;
+    max-width:1450px;
+
+    margin:auto;
+
+    padding:
+    0 5% 70px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(220px,1fr)
+    );
+
+    gap:22px;
 }
 
 .card{
- background:white;
- border-radius:20px;
- overflow:hidden;
- box-shadow:0 10px 30px rgba(30,40,50,.12);
- transition:.25s;
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 30px
+    rgba(30,40,50,.12);
+
+    transition:.25s;
 }
 
 .card:hover{
- transform:translateY(-6px);
+    transform:
+    translateY(-6px);
 }
 
 .photo{
- width:100%;
- height:300px;
- overflow:hidden;
- background:#eee;
+    width:100%;
+    height:300px;
+
+    overflow:hidden;
+
+    background:#eee;
 }
 
 .photo img{
- width:100%;
- height:100%;
- object-fit:cover;
- display:block;
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
 }
 
 .info{
- padding:16px;
+    padding:16px;
 }
 
 .badge{
- display:inline-block;
- background:#b78350;
- color:white;
- padding:5px 9px;
- border-radius:20px;
- font-size:11px;
+    display:inline-block;
+
+    background:#b78350;
+    color:white;
+
+    padding:5px 9px;
+
+    border-radius:20px;
+
+    font-size:11px;
 }
 
 .info h3{
- margin:10px 0 5px;
- font-size:17px;
+    margin:10px 0 5px;
+
+    font-size:17px;
 }
 
 .category{
- color:#758188;
- font-size:13px;
+    color:#758188;
+    font-size:13px;
 }
 
 .price{
- margin-top:12px;
- font-size:21px;
- font-weight:bold;
+    margin-top:12px;
+
+    font-size:21px;
+    font-weight:bold;
 }
 
 .old{
- color:#999;
- text-decoration:line-through;
- font-size:14px;
- margin-left:6px;
+    color:#999;
+
+    text-decoration:
+    line-through;
+
+    font-size:14px;
+
+    margin-left:6px;
 }
 
 .purchase{
- width:100%;
- margin-top:13px;
- padding:12px;
- border:0;
- border-radius:10px;
- background:#263238;
- color:white;
- cursor:pointer;
- font-weight:bold;
+    width:100%;
+
+    margin-top:13px;
+
+    padding:12px;
+
+    border:0;
+
+    border-radius:10px;
+
+    background:#263238;
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
 }
 
 .purchase:hover{
- background:#b78350;
+    background:#b78350;
 }
 
+/* SECTIONS */
+
 .section{
- max-width:1200px;
- margin:25px auto;
- padding:50px 7%;
- text-align:center;
- background:rgba(255,255,255,.82);
- border-radius:25px;
+    max-width:1200px;
+
+    margin:25px auto;
+
+    padding:
+    50px 7%;
+
+    text-align:center;
+
+    background:
+    rgba(255,255,255,.88);
+
+    border-radius:25px;
 }
 
 .section h2{
- font-family:Georgia,serif;
- font-size:35px;
- margin-bottom:15px;
+    font-family:Georgia,serif;
+
+    font-size:35px;
+
+    margin-bottom:15px;
 }
 
 .section p{
- color:#637179;
- line-height:1.8;
+    color:#637179;
+
+    line-height:1.8;
 }
 
+/* FORM */
+
 .form{
- max-width:650px;
- margin:25px auto;
- display:grid;
- gap:12px;
+    max-width:650px;
+
+    margin:25px auto;
+
+    display:grid;
+
+    gap:12px;
 }
 
 .form input,
 .form textarea,
 .form select{
- width:100%;
- padding:13px;
- border:1px solid #ddd;
- border-radius:10px;
+    width:100%;
+
+    padding:14px;
+
+    border:
+    1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:15px;
 }
 
-footer{
- margin-top:50px;
- padding:35px;
- text-align:center;
- background:rgba(255,255,255,.8);
- color:#68757b;
+/* LOCATION */
+
+.locationButtons{
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:10px;
 }
+
+.locationButton{
+    padding:14px;
+
+    border:0;
+
+    border-radius:10px;
+
+    background:#263238;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.locationButton:hover{
+    background:#b78350;
+}
+
+.locationStatus{
+    margin-top:10px;
+
+    padding:15px;
+
+    background:#eef7ff;
+
+    border-radius:12px;
+
+    text-align:left;
+
+    line-height:1.7;
+}
+
+#mapArea{
+    display:none;
+
+    margin-top:20px;
+}
+
+#map{
+    width:100%;
+
+    height:430px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 8px 25px
+    rgba(0,0,0,.15);
+}
+
+.confirmLocation{
+    width:100%;
+
+    margin-top:10px;
+
+    padding:14px;
+
+    border:0;
+
+    border-radius:10px;
+
+    background:#b78350;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.mapLink{
+    display:block;
+
+    margin-top:10px;
+
+    padding:12px;
+
+    background:#e8f6ed;
+
+    color:#176b37;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:50px;
+
+    padding:35px;
+
+    text-align:center;
+
+    background:
+    rgba(255,255,255,.85);
+
+    color:#68757b;
+}
+
+/* MOBILE */
 
 @media(max-width:600px){
 
- .products{
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
- }
+    .products{
+        grid-template-columns:
+        repeat(2,1fr);
 
- .photo{
-  height:235px;
- }
+        gap:12px;
+    }
 
- .info{
-  padding:11px;
- }
+    .photo{
+        height:235px;
+    }
 
- .info h3{
-  font-size:14px;
- }
+    .info{
+        padding:11px;
+    }
 
- .price{
-  font-size:17px;
- }
+    .info h3{
+        font-size:14px;
+    }
+
+    .price{
+        font-size:17px;
+    }
+
+    .locationButtons{
+        grid-template-columns:1fr;
+    }
+
+    nav button{
+        padding:7px;
+
+        font-size:12px;
+    }
 }
+
 </style>
+
 </head>
 
 <body>
+
+
+<!-- HEADER -->
 
 <header>
 
@@ -290,32 +531,56 @@ footer{
 </div>
 
 <nav>
-<button onclick="shop()">Shop</button>
-<button onclick="about()">About Us</button>
-<button onclick="delivery()">Home Delivery</button>
-<button onclick="contact()">Contact</button>
+
+<button onclick="goShop()">
+Shop
+</button>
+
+<button onclick="goAbout()">
+About Us
+</button>
+
+<button onclick="goDelivery()">
+Home Delivery
+</button>
+
+<button onclick="goContact()">
+Contact
+</button>
+
 </nav>
 
 <button class="cart">
-🛒 Cart (<span id="cartCount">0</span>)
+
+🛒 Cart
+(<span id="cartCount">0</span>)
+
 </button>
 
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero">
 
-<h1>Pakistani Fashion Collection</h1>
+<h1>
+Pakistani Fashion Collection
+</h1>
 
 <p>
-Modern Pakistani fashion for the new generation.
-Lawn, embroidered suits, silk, velvet,
-co-ords, western wear, shalwar kameez,
-formal and party collections.
+
+Modern Pakistani clothing for men and women.
+Shop Lawn, Silk, Velvet, 2 Piece, 3 Piece,
+4 Piece, Kurta, Shalwar Kameez,
+Formal Wear, Party Wear and Eid Collection.
+
 </p>
 
 </section>
 
+
+<!-- SEARCH -->
 
 <div class="shopTools">
 
@@ -323,93 +588,274 @@ formal and party collections.
 
 <input
 id="search"
-placeholder="Search Lawn, Kurta, Silk, Eid..."
+placeholder="Search clothes..."
 >
 
-<button onclick="searchProducts()">🔍</button>
+<button onclick="searchProducts()">
+🔍
+</button>
 
 </div>
 
-<select id="category" onchange="searchProducts()">
 
-<option value="all">All Clothing</option>
+<select
+id="category"
+onchange="searchProducts()">
 
-<option value="Women">Women</option>
-<option value="Men">Men</option>
+<option value="all">
+All Clothing
+</option>
 
-<option value="Lawn">Lawn</option>
-<option value="3 Piece">3 Piece</option>
-<option value="2 Piece">2 Piece</option>
-<option value="Co-Ord">Co-Ord</option>
-<option value="Silk">Silk</option>
-<option value="Velvet">Velvet</option>
-<option value="Formal">Formal</option>
-<option value="Party Wear">Party Wear</option>
-<option value="Eid">Eid Collection</option>
-<option value="Kurta">Kurta</option>
-<option value="Shalwar Kameez">Shalwar Kameez</option>
-<option value="Western">Western</option>
+<option value="Women">
+Women
+</option>
+
+<option value="Men">
+Men
+</option>
+
+<option value="Lawn">
+Lawn
+</option>
+
+<option value="2 Piece">
+2 Piece
+</option>
+
+<option value="3 Piece">
+3 Piece
+</option>
+
+<option value="4 Piece">
+4 Piece
+</option>
+
+<option value="Silk">
+Silk
+</option>
+
+<option value="Velvet">
+Velvet
+</option>
+
+<option value="Formal">
+Formal
+</option>
+
+<option value="Party Wear">
+Party Wear
+</option>
+
+<option value="Eid">
+Eid
+</option>
+
+<option value="Kurta">
+Kurta
+</option>
+
+<option value="Shalwar Kameez">
+Shalwar Kameez
+</option>
 
 </select>
 
 </div>
 
 
-<div class="products" id="products"></div>
+<!-- PRODUCTS -->
+
+<div
+class="products"
+id="products">
+</div>
 
 
-<section class="section" id="about">
+<!-- ABOUT -->
 
-<h2>About ÉLÉGANCE</h2>
+<section
+class="section"
+id="about">
+
+<h2>
+About Us
+</h2>
 
 <p>
-ÉLÉGANCE is a modern Pakistani fashion store
-bringing traditional Pakistani clothing together
-with new-generation styles.
 
-Our collection includes Lawn, Silk, Velvet,
-3-Piece suits, Co-Ord sets, Kurta Shalwar,
-Party Wear, Eid Wear and modern Western fashion.
+ÉLÉGANCE is a modern Pakistani fashion
+store offering stylish clothing for men
+and women.
+
+Our collection combines traditional
+Pakistani fashion with modern designs.
+
+We offer Lawn, Silk, Velvet, 2 Piece,
+3 Piece, 4 Piece, Kurta, Shalwar Kameez,
+Formal Wear, Party Wear and Eid Wear.
+
 </p>
 
 </section>
 
 
-<section class="section" id="delivery">
+<!-- DELIVERY -->
 
-<h2>🏠 Home Delivery</h2>
+<section
+class="section"
+id="delivery">
+
+<h2>
+🏠 Home Delivery
+</h2>
 
 <p>
-Enter your details and our store will deliver
-your selected clothing to your address.
+
+Enter your details and select the exact
+location where you want your order delivered.
+
 </p>
+
 
 <div class="form">
 
-<input placeholder="Full Name">
 
-<input placeholder="Phone Number">
+<input
+id="customerName"
+placeholder="Full Name"
+>
 
-<input type="email" placeholder="Email Address">
 
-<input placeholder="City">
+<input
+id="customerPhone"
+placeholder="Phone Number"
+type="tel"
+>
 
-<textarea rows="4"
-placeholder="Complete Delivery Address"></textarea>
 
-<select>
+<input
+id="customerEmail"
+placeholder="Email Address"
+type="email"
+>
 
-<option>Home Delivery</option>
-<option>Express Delivery</option>
-<option>Same Day Delivery</option>
+
+<input
+id="city"
+placeholder="City"
+>
+
+
+<textarea
+id="address"
+rows="4"
+placeholder="Complete Delivery Address">
+</textarea>
+
+
+<!-- LOCATION BUTTONS -->
+
+<div class="locationButtons">
+
+<button
+class="locationButton"
+onclick="useGPS()">
+
+📍 Use My GPS Location
+
+</button>
+
+
+<button
+class="locationButton"
+onclick="openLocationPicker()">
+
+🗺️ Select Exact Location
+
+</button>
+
+</div>
+
+
+<!-- STATUS -->
+
+<div
+id="locationStatus"
+class="locationStatus">
+
+📍 No location selected.
+
+<br><br>
+
+Choose GPS or Select Exact Location.
+
+</div>
+
+
+<!-- GOOGLE MAP -->
+
+<div id="mapArea">
+
+<h3>
+📍 Select Your Exact Delivery Location
+</h3>
+
+<p style="margin:8px 0;color:#777">
+
+Click anywhere on the map to move
+the delivery pin.
+
+</p>
+
+
+<div id="map"></div>
+
+
+<button
+class="confirmLocation"
+onclick="confirmMapLocation()">
+
+✅ Confirm This Location
+
+</button>
+
+
+<a
+id="mapLink"
+class="mapLink"
+target="_blank"
+style="display:none">
+
+🗺️ Open Full Google Maps
+
+</a>
+
+</div>
+
+
+<select
+id="deliveryType">
+
+<option>
+Home Delivery
+</option>
+
+<option>
+Express Delivery
+</option>
+
+<option>
+Same Day Delivery
+</option>
 
 </select>
 
+
 <button
 class="purchase"
-onclick="orderNow()">
+onclick="confirmOrder()">
 
-🚚 Place Home Delivery Order
+🚚 Confirm Home Delivery
 
 </button>
 
@@ -418,29 +864,47 @@ onclick="orderNow()">
 </section>
 
 
-<section class="section" id="contact">
+<!-- CONTACT -->
 
-<h2>Contact Us</h2>
+<section
+class="section"
+id="contact">
+
+<h2>
+Contact Us
+</h2>
 
 <p>
-For orders, products and delivery information,
-please contact our store.
+
+Have a question about an order or product?
+Send us a message.
+
 </p>
+
 
 <div class="form">
 
-<input placeholder="Your Name">
+<input
+id="contactName"
+placeholder="Your Name"
+>
 
-<input placeholder="Phone Number">
+<input
+id="contactPhone"
+placeholder="Phone Number"
+>
 
-<textarea rows="4"
-placeholder="Your Message"></textarea>
+<textarea
+id="contactMessage"
+rows="4"
+placeholder="Your Message">
+</textarea>
 
 <button
 class="purchase"
 onclick="sendMessage()">
 
-Send Message
+📩 Send Message
 
 </button>
 
@@ -451,200 +915,93 @@ Send Message
 
 <footer>
 
-© 2026 ÉLÉGANCE Pakistani Fashion Store
+© 2026 ÉLÉGANCE Fashion Store
 
 <br><br>
 
-Lawn • Silk • Velvet • 3 Piece • Co-Ord •
-Kurta • Shalwar Kameez • Eid • Party Wear
+Lawn • Silk • Velvet • 2 Piece •
+3 Piece • 4 Piece • Kurta •
+Shalwar Kameez • Eid • Formal Wear
 
 </footer>
 
 
 <script>
 
-/* =========================================
-   48 MODERN PAKISTANI FASHION PRODUCTS
-========================================= */
+/* =====================================
+PRODUCTS
+===================================== */
 
 const products=[
 
-/* WOMEN LAWN */
-
 {
-name:"Mint Pastel Embroidered Lawn 3 Piece",
+name:"Mint Pastel Lawn 3 Piece",
 cat:"3 Piece",
 gender:"Women",
 type:"Lawn",
-price:9990,
-sale:7990,
+price:99,
+sale:79,
 image:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=85"
 },
 
 {
-name:"Lavender Floral Lawn 3 Piece",
+name:"Lavender Floral Lawn Suit",
 cat:"3 Piece",
 gender:"Women",
 type:"Lawn",
-price:8990,
-sale:6990,
+price:89,
+sale:69,
 image:"https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=700&q=85"
 },
 
 {
-name:"Ivory Embroidered Lawn Suit",
-cat:"Lawn",
+name:"Ivory Embroidered Suit",
+cat:"3 Piece",
 gender:"Women",
 type:"Lawn",
-price:10990,
-sale:8490,
+price:109,
+sale:84,
 image:"https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=700&q=85"
 },
 
 {
-name:"Dusty Pink Printed Lawn",
+name:"Dusty Pink Lawn",
 cat:"2 Piece",
 gender:"Women",
 type:"Lawn",
-price:6990,
-sale:5490,
+price:69,
+sale:54,
 image:"https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=700&q=85"
 },
 
 {
-name:"Sage Green Lawn Collection",
+name:"Sage Green Lawn",
 cat:"3 Piece",
 gender:"Women",
 type:"Lawn",
-price:9490,
-sale:7490,
+price:94,
+sale:74,
 image:"https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=85"
 },
-
-{
-name:"Peach Floral Lawn Suit",
-cat:"3 Piece",
-gender:"Women",
-type:"Lawn",
-price:8990,
-sale:6790,
-image:"https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?auto=format&fit=crop&w=700&q=85"
-},
-
-/* WOMEN MODERN */
-
-{
-name:"Modern Wide Leg Co-Ord Set",
-cat:"Co-Ord",
-gender:"Women",
-type:"Western",
-price:12990,
-sale:9990,
-image:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Minimal Cream Co-Ord Outfit",
-cat:"Co-Ord",
-gender:"Women",
-type:"Western",
-price:11990,
-sale:8990,
-image:"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Oversized Blazer Women",
-cat:"Western",
-gender:"Women",
-type:"Western",
-price:14990,
-sale:11990,
-image:"https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Modern Black Wide Leg Set",
-cat:"Western",
-gender:"Women",
-type:"Western",
-price:13990,
-sale:10990,
-image:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=85"
-},
-
-/* WOMEN SILK / FORMAL */
 
 {
 name:"Luxury Silk Evening Suit",
 cat:"Silk",
 gender:"Women",
 type:"Silk",
-price:18990,
-sale:14990,
+price:189,
+sale:149,
 image:"https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=700&q=85"
 },
 
 {
-name:"Champagne Silk Party Dress",
-cat:"Party Wear",
-gender:"Women",
-type:"Silk",
-price:21990,
-sale:17990,
-image:"https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Emerald Velvet Formal Dress",
+name:"Emerald Velvet Formal",
 cat:"Velvet",
 gender:"Women",
 type:"Formal",
-price:23990,
-sale:18990,
-image:"https://images.unsplash.com/photo-1585488435739-6c1e3a4f8f5e?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Royal Navy Velvet Suit",
-cat:"Velvet",
-gender:"Women",
-type:"Formal",
-price:22990,
-sale:17990,
+price:239,
+sale:189,
 image:"https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Organza Embroidered Formal",
-cat:"Formal",
-gender:"Women",
-type:"Formal",
-price:25990,
-sale:20990,
-image:"https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Mirror Work Festive Suit",
-cat:"Eid",
-gender:"Women",
-type:"Party Wear",
-price:19990,
-sale:15990,
-image:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=85"
-},
-
-/* ANARKALI / SHARARA / MAXI */
-
-{
-name:"Modern Anarkali Frock",
-cat:"Party Wear",
-gender:"Women",
-type:"Formal",
-price:18990,
-sale:14990,
-image:"https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=700&q=85"
 },
 
 {
@@ -652,60 +1009,38 @@ name:"Pastel Sharara Set",
 cat:"Eid",
 gender:"Women",
 type:"Party Wear",
-price:21990,
-sale:16990,
-image:"https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Royal Farshi Shalwar Suit",
-cat:"Eid",
-gender:"Women",
-type:"Formal",
-price:24990,
-sale:19990,
+price:219,
+sale:169,
 image:"https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=85"
 },
 
 {
-name:"Flowy Kaftan Maxi",
-cat:"Party Wear",
+name:"Modern Co-Ord Set",
+cat:"Co-Ord",
 gender:"Women",
 type:"Western",
-price:17990,
-sale:13990,
+price:129,
+sale:99,
 image:"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=85"
 },
 
 {
-name:"Asymmetric Modern Kurti",
-cat:"Western",
-gender:"Women",
-type:"Western",
-price:8990,
-sale:6990,
-image:"https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Long Modest Everyday Kurti",
+name:"Long Everyday Kurti",
 cat:"Women",
 gender:"Women",
 type:"Western",
-price:6990,
-sale:4990,
+price:69,
+sale:49,
 image:"https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=700&q=85"
 },
-
-/* MEN */
 
 {
 name:"Classic White Shalwar Kameez",
 cat:"Shalwar Kameez",
 gender:"Men",
 type:"Men",
-price:7990,
-sale:5990,
+price:79,
+sale:59,
 image:"https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=700&q=85"
 },
 
@@ -714,8 +1049,8 @@ name:"Premium Black Shalwar Kameez",
 cat:"Shalwar Kameez",
 gender:"Men",
 type:"Men",
-price:8990,
-sale:6990,
+price:89,
+sale:69,
 image:"https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=700&q=85"
 },
 
@@ -724,8 +1059,8 @@ name:"Linen Kurta Pajama",
 cat:"Kurta",
 gender:"Men",
 type:"Men",
-price:6990,
-sale:5490,
+price:69,
+sale:54,
 image:"https://images.unsplash.com/photo-1598808503746-f34c53b9323e?auto=format&fit=crop&w=700&q=85"
 },
 
@@ -734,8 +1069,8 @@ name:"Premium Silk Kurta",
 cat:"Silk",
 gender:"Men",
 type:"Silk",
-price:9990,
-sale:7490,
+price:99,
+sale:74,
 image:"https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=700&q=85"
 },
 
@@ -744,38 +1079,28 @@ name:"Eid White Kurta",
 cat:"Eid",
 gender:"Men",
 type:"Men",
-price:7990,
-sale:5990,
+price:79,
+sale:59,
 image:"https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=700&q=85"
 },
 
 {
-name:"Designer Navy Kurta",
-cat:"Kurta",
-gender:"Men",
-type:"Men",
-price:8990,
-sale:6990,
-image:"https://images.unsplash.com/photo-1598808503746-f34c53b9323e?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Kurta With Embroidered Waistcoat",
+name:"Kurta With Waistcoat",
 cat:"Eid",
 gender:"Men",
 type:"Formal",
-price:13990,
-sale:10990,
+price:139,
+sale:109,
 image:"https://images.unsplash.com/photo-1555069519-127aadedf1ee?auto=format&fit=crop&w=700&q=85"
 },
 
 {
-name:"Royal Black Waistcoat Set",
+name:"Royal Waistcoat Set",
 cat:"Formal",
 gender:"Men",
 type:"Formal",
-price:14990,
-sale:11990,
+price:149,
+sale:119,
 image:"https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=700&q=85"
 },
 
@@ -784,8 +1109,8 @@ name:"Modern Three Piece Suit",
 cat:"3 Piece",
 gender:"Men",
 type:"Formal",
-price:24990,
-sale:19990,
+price:249,
+sale:199,
 image:"https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=700&q=85"
 },
 
@@ -794,153 +1119,58 @@ name:"Luxury Four Piece Suit",
 cat:"4 Piece",
 gender:"Men",
 type:"Formal",
-price:29990,
-sale:23990,
+price:299,
+sale:239,
 image:"https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=700&q=85"
 },
 
 {
-name:"Italian Style Navy Suit",
-cat:"Formal",
-gender:"Men",
-type:"Formal",
-price:27990,
-sale:21990,
-image:"https://images.unsplash.com/photo-1555069519-127aadedf1ee?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Modern Slim Fit Suit",
-cat:"Formal",
-gender:"Men",
-type:"Formal",
-price:25990,
-sale:19990,
-image:"https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Premium Wedding Prince Coat",
+name:"Wedding Prince Coat",
 cat:"Party Wear",
 gender:"Men",
 type:"Formal",
-price:29990,
-sale:23990,
+price:299,
+sale:239,
 image:"https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Velvet Prince Coat",
-cat:"Velvet",
-gender:"Men",
-type:"Formal",
-price:24990,
-sale:19990,
-image:"https://images.unsplash.com/photo-1598808503746-f34c53b9323e?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Wedding Black Sherwani",
-cat:"Party Wear",
-gender:"Men",
-type:"Formal",
-price:32990,
-sale:26990,
-image:"https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Modern Casual Shirt",
-cat:"Men",
-gender:"Men",
-type:"Men",
-price:4990,
-sale:3990,
-image:"https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Premium Casual Overshirt",
-cat:"Men",
-gender:"Men",
-type:"Western",
-price:5990,
-sale:4490,
-image:"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Modern Polo Outfit",
-cat:"Men",
-gender:"Men",
-type:"Western",
-price:6490,
-sale:4990,
-image:"https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Smart Casual Blazer",
-cat:"Formal",
-gender:"Men",
-type:"Western",
-price:15990,
-sale:12490,
-image:"https://images.unsplash.com/photo-1555069519-127aadedf1ee?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Premium Linen Kurta",
-cat:"Kurta",
-gender:"Men",
-type:"Men",
-price:7990,
-sale:5990,
-image:"https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Eid Festive Kurta Set",
-cat:"Eid",
-gender:"Men",
-type:"Party Wear",
-price:10990,
-sale:8490,
-image:"https://images.unsplash.com/photo-1598808503746-f34c53b9323e?auto=format&fit=crop&w=700&q=85"
-},
-
-{
-name:"Premium Cotton Kameez Shalwar",
-cat:"Shalwar Kameez",
-gender:"Men",
-type:"Men",
-price:6990,
-sale:4990,
-image:"https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=700&q=85"
 }
 
 ];
 
 
-/* DISPLAY */
+/* =====================================
+DISPLAY
+===================================== */
 
 function displayProducts(list){
 
-const box=document.getElementById("products");
+const box=
+document.getElementById("products");
 
-if(list.length===0){
+if(!list.length){
 
 box.innerHTML=`
-<div style="grid-column:1/-1;text-align:center;padding:60px">
+
+<div style="
+grid-column:1/-1;
+text-align:center;
+padding:60px">
+
 <h2>No Products Found</h2>
-<p>Try another search.</p>
+
+<p>
+Try another search.
+</p>
+
 </div>
+
 `;
 
 return;
 }
 
-box.innerHTML=list.map((p,index)=>`
+box.innerHTML=
+
+list.map(p=>`
 
 <div class="card">
 
@@ -949,8 +1179,7 @@ box.innerHTML=list.map((p,index)=>`
 <img
 src="${p.image}"
 alt="${p.name}"
-loading="lazy"
->
+loading="lazy">
 
 </div>
 
@@ -960,7 +1189,9 @@ loading="lazy"
 ${p.gender}
 </span>
 
-<h3>${p.name}</h3>
+<h3>
+${p.name}
+</h3>
 
 <div class="category">
 ${p.cat}
@@ -978,9 +1209,9 @@ $${p.price}
 
 <button
 class="purchase"
-onclick="purchase(${products.indexOf(p)})">
+onclick="addCart(${products.indexOf(p)})">
 
-🛒 Purchase / Add To Cart
+🛒 Purchase
 
 </button>
 
@@ -993,45 +1224,51 @@ onclick="purchase(${products.indexOf(p)})">
 }
 
 
-/* SEARCH */
+/* =====================================
+SEARCH
+===================================== */
 
 function searchProducts(){
 
 const text=
 document.getElementById("search")
 .value
-.toLowerCase()
-.trim();
+.toLowerCase();
 
-const category=
+const cat=
 document.getElementById("category")
 .value;
 
-const result=products.filter(p=>{
+const result=
+products.filter(p=>{
 
-const searchMatch=
+const textMatch=
 
 text==="" ||
 
-p.name.toLowerCase().includes(text) ||
+p.name.toLowerCase()
+.includes(text) ||
 
-p.cat.toLowerCase().includes(text) ||
+p.cat.toLowerCase()
+.includes(text) ||
 
-p.gender.toLowerCase().includes(text) ||
+p.type.toLowerCase()
+.includes(text) ||
 
-p.type.toLowerCase().includes(text);
+p.gender.toLowerCase()
+.includes(text);
 
-const categoryMatch=
+const catMatch=
 
-category==="all" ||
+cat==="all" ||
 
-p.cat===category ||
+p.cat===cat ||
 
-p.gender===category ||
+p.type===cat ||
 
-p.type===category;
+p.gender===cat;
 
-return searchMatch && categoryMatch;
+return textMatch && catMatch;
 
 });
 
@@ -1040,78 +1277,563 @@ displayProducts(result);
 }
 
 
-/* ENTER SEARCH */
+document
+.getElementById("search")
+.addEventListener(
+"keydown",
+e=>{
 
-document.getElementById("search")
-.addEventListener("keydown",e=>{
-
-if(e.key==="Enter"){
+if(e.key==="Enter")
 searchProducts();
-}
 
 });
 
 
-/* CART */
+/* =====================================
+CART
+===================================== */
 
 let cart=0;
 
-function purchase(index){
+function addCart(index){
 
 cart++;
 
-document.getElementById("cartCount")
-.innerText=cart;
+document.getElementById(
+"cartCount"
+).innerText=cart;
 
 alert(
 products[index].name+
-" added to your cart!"
+" added to cart."
 );
 
 }
 
 
-/* NAVIGATION */
+/* =====================================
+GOOGLE MAP VARIABLES
+===================================== */
 
-function shop(){
+let map;
 
-window.scrollTo({
-top:document.querySelector(".shopTools").offsetTop-80,
+let marker;
+
+let selectedLat=null;
+
+let selectedLng=null;
+
+
+/* =====================================
+INITIALIZE MAP
+===================================== */
+
+async function initMap(){
+
+const {
+Map
+}=await google.maps.importLibrary("maps");
+
+const {
+AdvancedMarkerElement
+}=await google.maps.importLibrary("marker");
+
+
+/*
+
+Default center:
+
+Islamabad / Rawalpindi area.
+
+Customer can move anywhere.
+
+*/
+
+const defaultPosition={
+lat:33.6844,
+lng:73.0479
+};
+
+
+map=new Map(
+document.getElementById("map"),
+{
+
+center:defaultPosition,
+
+zoom:12,
+
+mapId:"DEMO_MAP_ID",
+
+mapTypeControl:true,
+
+streetViewControl:true,
+
+fullscreenControl:true,
+
+zoomControl:true
+
+});
+
+
+/* CLICK MAP */
+
+map.addListener(
+"click",
+event=>{
+
+setMarker(
+event.latLng.lat(),
+event.latLng.lng()
+);
+
+}
+);
+
+
+/* MARKER */
+
+marker=
+new AdvancedMarkerElement({
+
+map:map,
+
+position:defaultPosition,
+
+gmpDraggable:true,
+
+title:
+"Delivery Location"
+
+});
+
+
+marker.addListener(
+"dragend",
+event=>{
+
+const pos=
+marker.position;
+
+setMarker(
+pos.lat,
+pos.lng,
+false
+);
+
+});
+
+
+}
+
+
+/* =====================================
+SET MARKER
+===================================== */
+
+function setMarker(
+lat,
+lng,
+moveMap=true
+){
+
+selectedLat=lat;
+selectedLng=lng;
+
+
+marker.position={
+lat:lat,
+lng:lng
+};
+
+
+if(moveMap){
+
+map.panTo({
+lat:lat,
+lng:lng
+});
+
+map.setZoom(17);
+
+}
+
+
+document.getElementById(
+"locationStatus"
+).innerHTML=
+
+"📍 <b>Delivery location selected.</b><br><br>"+
+
+"Latitude: "+
+lat+
+"<br>"+
+
+"Longitude: "+
+lng+
+"<br><br>"+
+
+"Click <b>Confirm This Location</b>.";
+
+}
+
+
+/* =====================================
+OPEN LOCATION PICKER
+===================================== */
+
+function openLocationPicker(){
+
+document.getElementById(
+"mapArea"
+).style.display="block";
+
+
+if(!map){
+
+if(
+typeof google==="undefined" ||
+!google.maps
+){
+
+alert(
+
+"Google Maps could not load.\n\n"+
+
+"Please add your Google Maps API key."
+
+);
+
+return;
+
+}
+
+initMap();
+
+}
+
+
+/*
+
+Try GPS first.
+
+If GPS fails, map still opens.
+
+*/
+
+if(
+navigator.geolocation
+){
+
+navigator.geolocation.getCurrentPosition(
+
+position=>{
+
+setMarker(
+position.coords.latitude,
+position.coords.longitude
+);
+
+},
+
+()=>{
+
+map.setCenter({
+lat:33.6844,
+lng:73.0479
+});
+
+map.setZoom(12);
+
+},
+
+{
+enableHighAccuracy:true,
+timeout:10000
+}
+
+);
+
+}
+
+document
+.getElementById("mapArea")
+.scrollIntoView({
 behavior:"smooth"
 });
 
 }
 
-function about(){
 
-document.getElementById("about")
-.scrollIntoView({behavior:"smooth"});
+/* =====================================
+USE GPS
+===================================== */
 
-}
+function useGPS(){
 
-function delivery(){
-
-document.getElementById("delivery")
-.scrollIntoView({behavior:"smooth"});
-
-}
-
-function contact(){
-
-document.getElementById("contact")
-.scrollIntoView({behavior:"smooth"});
-
-}
-
-function orderNow(){
+if(
+!navigator.geolocation
+){
 
 alert(
-"Your home delivery request has been received!"
+"GPS is not supported."
+);
+
+return;
+
+}
+
+
+document.getElementById(
+"locationStatus"
+).innerHTML=
+
+"📍 Finding your location...";
+
+
+navigator.geolocation.getCurrentPosition(
+
+position=>{
+
+const lat=
+position.coords.latitude;
+
+const lng=
+position.coords.longitude;
+
+
+openLocationPicker();
+
+
+setTimeout(()=>{
+
+setMarker(lat,lng);
+
+},500);
+
+},
+
+error=>{
+
+document.getElementById(
+"locationStatus"
+).innerHTML=
+
+"⚠️ GPS permission/location could not be accessed.<br><br>"+
+
+"Don't worry. The map will open below. "+
+"Move the map and click your exact delivery location.";
+
+openLocationPicker();
+
+},
+
+{
+enableHighAccuracy:true,
+
+timeout:15000,
+
+maximumAge:0
+
+}
+
 );
 
 }
 
+
+/* =====================================
+CONFIRM MAP LOCATION
+===================================== */
+
+function confirmMapLocation(){
+
+if(
+selectedLat===null ||
+selectedLng===null
+){
+
+alert(
+"Please click your exact delivery location on the map."
+);
+
+return;
+
+}
+
+
+const link=
+
+"https://www.google.com/maps?q="+
+selectedLat+
+","+
+selectedLng;
+
+
+document.getElementById(
+"mapLink"
+).href=link;
+
+
+document.getElementById(
+"mapLink"
+).style.display="block";
+
+
+document.getElementById(
+"locationStatus"
+).innerHTML=
+
+"✅ <b>Exact delivery location confirmed!</b><br><br>"+
+
+"Latitude: "+
+selectedLat+
+
+"<br>"+
+
+"Longitude: "+
+selectedLng;
+
+
+alert(
+"✅ Delivery location confirmed!"
+);
+
+}
+
+
+/* =====================================
+ORDER
+===================================== */
+
+function confirmOrder(){
+
+const name=
+document.getElementById(
+"customerName"
+).value.trim();
+
+const phone=
+document.getElementById(
+"customerPhone"
+).value.trim();
+
+const city=
+document.getElementById(
+"city"
+).value.trim();
+
+const address=
+document.getElementById(
+"address"
+).value.trim();
+
+const type=
+document.getElementById(
+"deliveryType"
+).value;
+
+
+if(
+name==="" ||
+phone==="" ||
+city===""
+){
+
+alert(
+"Please enter Name, Phone and City."
+);
+
+return;
+
+}
+
+
+if(
+selectedLat===null ||
+selectedLng===null
+){
+
+alert(
+"Please select and confirm your exact delivery location on the map."
+);
+
+return;
+
+}
+
+
+const locationLink=
+
+"https://www.google.com/maps?q="+
+selectedLat+
+","+
+selectedLng;
+
+
+alert(
+
+"✅ ORDER READY\n\n"+
+
+"Name: "+
+name+
+
+"\nPhone: "+
+phone+
+
+"\nCity: "+
+city+
+
+"\nDelivery: "+
+type+
+
+"\nAddress: "+
+address+
+
+"\n\nGPS Location:\n"+
+locationLink
+
+);
+
+}
+
+
+/* =====================================
+CONTACT
+===================================== */
+
 function sendMessage(){
+
+const name=
+document.getElementById(
+"contactName"
+).value.trim();
+
+const phone=
+document.getElementById(
+"contactPhone"
+).value.trim();
+
+const message=
+document.getElementById(
+"contactMessage"
+).value.trim();
+
+
+if(
+!name ||
+!phone ||
+!message
+){
+
+alert(
+"Please complete all contact fields."
+);
+
+return;
+
+}
+
 
 alert(
 "Thank you! Your message has been received."
@@ -1120,10 +1842,67 @@ alert(
 }
 
 
-/* START */
+/* =====================================
+NAVIGATION
+===================================== */
+
+function goShop(){
+
+document
+.querySelector(".shopTools")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+function goAbout(){
+
+document
+.getElementById("about")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+function goDelivery(){
+
+document
+.getElementById("delivery")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+function goContact(){
+
+document
+.getElementById("contact")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+/* =====================================
+START
+===================================== */
 
 displayProducts(products);
+
 </script>
+
+
+<!-- GOOGLE MAPS API -->
+
+<script async
+src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&v=weekly">
+</script>
+
 </body>
 </html>
+
 
