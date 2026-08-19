@@ -807,25 +807,25 @@ the delivery pin.
 </p>
 
 
-<div id="map"></div>
+<div id="map" style="display:none"></div>
+
 
 
 <button
-class="confirmLocation"
-onclick="confirmMapLocation()">
-
+type="button"
+class="locationButton"
+onclick="openGoogleMaps()"
+style="margin-top:10px; background:#176b37">
+🗺️ Open Full Google Maps
 </button>
 
-
-<a
-id="mapLink"
-class="mapLink"
-target="_blank"
-style="display:none">
-
-🗺️ Open Full Google Maps
-
-</a>
+<button
+type="button"
+class="locationButton"
+onclick="pasteLocationLink()"
+style="margin-top:10px; background:#b78350">
+📋 Paste Location Link Here
+</button>
 
 </div>
 
