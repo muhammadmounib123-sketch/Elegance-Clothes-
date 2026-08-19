@@ -791,24 +791,41 @@ Choose GPS or Select Exact Location.
 </div>
 
 
-<!-- GOOGLE MAP -->
+ <!-- NEW GPS BUTTONS -->
 
-<div id="mapArea">
+ <input type="text" id="locationLink" placeholder="Yahan Google Maps Link Paste hoga" style="width:100%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:5px;" readonly>
+ 
+<button
+ type="button"
+799 onclick="openGoogleMaps()"
+ style="width:100%; padding:12px; margin-top:10px; background:#176b37; color:white; border:none; border-radius:8px; font-size:16px;">
+ 🗺️ Open Full Google Maps
+ </button>
 
-<h3>
-📍 Select Your Exact Delivery Location
-</h3>
+ <button
+ type="button"
+ onclick="pasteLocationLink()"
+ style="width:100%; padding:12px; margin-top:10px; background:#b78350; color:white; border:none; border-radius:8px; font-size:16px;">
+ 📋 Paste Location Link Here
+ </button>
+ <button onclick="submitOrder()" style="width:100%; padding:12px; margin-top:15px; background:#000; color:white; border:none; border-radius:8px;">Confirm Home Delivery</button>
+ </div>
 
-<p style="margin:8px 0;color:#777">
+<script>
 
-Click anywhere on the map to move
-the delivery pin.
+ function openGoogleMaps() {
+   window.open('https://www.google.com/maps', '_blank');
+ }
 
-</p>
+function pasteLocationLink() {
+  let link = prompt('Google Maps کھولیں > Share > Copy Link > Yahan Paste کریں:');
+  if(link) {
+    document.getElementById('locationLink').value = link;
+   alert('✅ Location Link Save ہو گیا!');
+}
+}
 
-
-<div id="map" style="display:none"></div>
-
+ </script>
 
 
 <button
